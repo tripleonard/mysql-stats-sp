@@ -1,0 +1,3 @@
+/* command to be added to cron */
+
+mysql -h localhost -u root -ppasswd sysadmin -e "call ProdSizeInsert()"
