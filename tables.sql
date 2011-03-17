@@ -22,6 +22,8 @@ CREATE TABLE DBNames(
 	Type varchar (30)
 );
 
+/* this is the first table for recording individual table stats - it's in development */
+
 CREATE TABLE LargeTable(
 	ID int,
 	TableName int,
