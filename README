@@ -1,4 +1,4 @@
-mysql-stats-sp is a MySQL stored procedure which creates a historal record of assorted statistics.  
+mysql-stats-sp is a MySQL stored procedure which creates a historal record of various statistics.  
 
 Including:
 -data size
@@ -7,4 +7,4 @@ Including:
 -number of tables
 -number of indexes
 
-This is my first git/gihub repo so please forgive errors.
+This had been developed and tested on MySQL 5.1
