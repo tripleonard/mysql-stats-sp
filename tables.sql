@@ -18,13 +18,13 @@ DROP TABLE DBNames;
 
 CREATE TABLE DBNames(
 	ID int,
-	Name varchar(30),
+	DBName varchar(30),
 	Type varchar (30)
 );
 
 /* this is the first table for recording individual table stats as opposed to whole database stats - in development */
 
-CREATE TABLE LargeTable(
+CREATE TABLE TableSize(
 	ID int,
 	TableName int,
 	TotalRows int,
@@ -32,4 +32,12 @@ CREATE TABLE LargeTable(
 	TotalMB float,
 	DataMB float,
 	IndexMB float
+);
+
+DROP TABLE TableNames;
+
+CREATE TABLE TableNames(
+	ID int,
+	Name varchar(30),
+	Type varchar (30)
 );
