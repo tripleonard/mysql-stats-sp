@@ -1,4 +1,4 @@
 # command to be added to cron, I run it once per week
-# Yes it has com to my attention that I should not have this SP/db on my production db
+# note: this should not be running _on_ th production db, "observe without changing" (or something like that)
 
 mysql -h localhost -u root -ppasswd sysadmin -e "call ProdSizeInsert()"

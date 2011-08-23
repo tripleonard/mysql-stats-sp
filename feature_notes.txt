@@ -1,4 +1,4 @@
-/* workng notes*/
+/* working notes for features to add*/
 
 /* query for table size stats */
 select table_name,engine,row_format,table_rows,avg_row_length,
