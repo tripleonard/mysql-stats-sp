@@ -26,7 +26,6 @@ CREATE TABLE DBNames(
 
 CREATE TABLE TableSize(
 	ID int,
-	TableName int,
 	TotalRows int,
 	AvgRowLength int,
 	TotalMB float,
