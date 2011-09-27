@@ -37,6 +37,8 @@ JOIN DBNames on (D.ID=DBNames.ID);
 
 /* this is the first table for recording individual table stats as opposed to whole database stats - in development */
 
+DROP TABLE TableSize;
+
 CREATE TABLE TableSize(
 	ID int,
 	TotalRows int,

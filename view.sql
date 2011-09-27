@@ -1,4 +1,4 @@
-CREATE VIEW Size as SELECT DBNames.Name,
+CREATE VIEW Size as SELECT DBNames.DBName,
 	D.TotalMB,
 	D.DataMB,
 	D.IndexMB,
