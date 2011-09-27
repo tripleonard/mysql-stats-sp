@@ -22,6 +22,19 @@ CREATE TABLE DBNames(
 	Type varchar (30)
 );
 
+
+/* a simple join for reporting if needed */
+
+CREATE VIEW Size as SELECT DBNames.Name,
+	D.TotalMB,
+	D.DataMB,
+	D.IndexMB,
+	D.Tables,
+	D.Indexes,
+	D.DateCreated
+FROM DataIndexSize as D
+JOIN DBNames on (D.ID=DBNames.ID);
+
 /* this is the first table for recording individual table stats as opposed to whole database stats - in development */
 
 CREATE TABLE TableSize(
@@ -30,7 +43,8 @@ CREATE TABLE TableSize(
 	AvgRowLength int,
 	TotalMB float,
 	DataMB float,
-	IndexMB float
+	IndexMB float,
+	DateCreated datetime
 );
 
 DROP TABLE TableNames;
