@@ -12,7 +12,7 @@ CREATE TABLE DataIndexSize(
 	Tables int,
 	Indexes int,
 	DateCreated datetime
-);
+) ENGINE=InnoDB;
 
 DROP TABLE DBNames;
 
@@ -20,7 +20,7 @@ CREATE TABLE DBNames(
 	ID int,
 	DBName varchar(30),
 	Type varchar (30)
-);
+) ENGINE=InnoDB;
 
 
 /* a simple join for reporting if needed */
@@ -47,7 +47,7 @@ CREATE TABLE TableSize(
 	DataMB float,
 	IndexMB float,
 	DateCreated datetime
-);
+) ENGINE=InnoDB;
 
 DROP TABLE TableNames;
 
