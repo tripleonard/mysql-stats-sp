@@ -5,7 +5,8 @@ CREATE DATABASE sysadmin;
 DROP TABLE DataIndexSize;
 
 CREATE TABLE DataIndexSize(
-	ID int,
+	ID int AUTO_INCREMENT,
+	DBName int,
 	TotalMB float,
 	DataMB float,
 	IndexMB float,
@@ -23,7 +24,7 @@ CREATE TABLE DBNames(
 ) ENGINE=InnoDB;
 
 
-/* a simple join for reporting if needed */
+/* a join for reporting*/
 
 CREATE VIEW Size as SELECT DBNames.Name,
 	D.TotalMB,
@@ -40,7 +41,9 @@ JOIN DBNames on (D.ID=DBNames.ID);
 DROP TABLE TableSize;
 
 CREATE TABLE TableSize(
-	ID int,
+	ID int AUTO_INCREMENT,
+	TableName int,
+	RowFormat varchar(30),
 	TotalRows int,
 	AvgRowLength int,
 	TotalMB float,
