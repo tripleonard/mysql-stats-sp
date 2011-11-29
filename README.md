@@ -16,7 +16,7 @@ I've called the database 'sysadmin' but you can change it to anything you like. 
 
 This is the command to be added to cron, I call it once/day.
 
-	mysql -h localhost -u root -ppasswd sysadmin -e "call ProdSizeInsert()"
+	mysql -h localhost -u root -p sysadmin -e "call DataIndexSizeInsert()"
 
 
 Features in Development
@@ -50,6 +50,6 @@ Below are the queries for the basis of this entire project:
 		(data_length)/1024/1024 as data_mb,
 		(index_length)/1024/1024 as index_mb
 	from information_schema.tables
-	where table_schema=database()
+	where table_schema=DATABASE()
 	order by 6 desc
 	limit 10;

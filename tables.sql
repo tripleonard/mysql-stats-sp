@@ -1,12 +1,14 @@
 /* create db and tables */
 
+/* 
 CREATE DATABASE sysadmin;
+USE sysadmin; 
+*/
 
 DROP TABLE DataIndexSize;
 
 CREATE TABLE DataIndexSize(
-	ID int AUTO_INCREMENT,
-	DBName int,
+	ID int,
 	TotalMB float,
 	DataMB float,
 	IndexMB float,
@@ -26,7 +28,7 @@ CREATE TABLE DBNames(
 
 /* a join for reporting*/
 
-CREATE VIEW Size as SELECT DBNames.Name,
+CREATE VIEW v_DataIndexSize as SELECT DBNames.DBName,
 	D.TotalMB,
 	D.DataMB,
 	D.IndexMB,
@@ -49,7 +51,8 @@ CREATE TABLE TableSize(
 	TotalMB float,
 	DataMB float,
 	IndexMB float,
-	DateCreated datetime
+	DateCreated datetime,
+	PRIMARY KEY(ID)
 ) ENGINE=InnoDB;
 
 DROP TABLE TableNames;
@@ -58,4 +61,4 @@ CREATE TABLE TableNames(
 	ID int,
 	Name varchar(30),
 	Type varchar (30)
-);
+) ENGINE=InnoDB;

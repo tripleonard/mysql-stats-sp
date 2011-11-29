@@ -1,17 +1,18 @@
 /* recreate procedure */
 
-DROP PROCEDURE ProdSizeInsert;
+DROP PROCEDURE TableSizeInsert;
 
 DELIMITER $$
 
-CREATE PROCEDURE ProdSizeInsert (
+CREATE PROCEDURE TableSizeInsert (
 )
 BEGIN
-	DECLARE total_mb float;
-	DECLARE data_mb float;
-	DECLARE index_mb float;
-	DECLARE tables int;
-	DECLARE indexes int;
+	DECLARE row_format float;
+	DECLARE total_rows float;
+	DECLARE avg_row_length float;
+	DECLARE total_mb int;
+	DECLARE data_mb int;
+	DECLARE index_mb int;
 
 SELECT sum(data_length+index_length)/1024/1024 INTO total_mb
 FROM information_schema.tables
@@ -35,7 +36,7 @@ WHERE table_schema=DATABASE() AND index_name<>'PRIMARY' LIMIT 1;
 	
 INSERT INTO DataIndexSize
 (ID,TotalMB,DataMB,IndexMB,Tables,Indexes,DateCreated)
-VALUES (1,total_mb,data_mb,index_mb,tables,indexes,NOW());
+VALUES (1,row_format,total_rows,avg_row_length,total_mb,data_mb,index_mb,NOW());
 	
 END;
 

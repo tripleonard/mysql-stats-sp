@@ -1,10 +1,10 @@
 /* recreate procedure */
 
-DROP PROCEDURE ProdSizeInsert;
+DROP PROCEDURE DataIndexSizeInsert;
 
 DELIMITER $$
 
-CREATE PROCEDURE ProdSizeInsert (
+CREATE PROCEDURE DataIndexSizeInsert (
 )
 BEGIN
 	DECLARE total_mb float;
